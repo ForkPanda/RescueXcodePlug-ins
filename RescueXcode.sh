@@ -14,10 +14,17 @@ ls=`defaults read com.apple.dt.Xcode | grep -o 'DVTPlugInManagerNonApplePlugIns-
 for x in $ls; do
     echo "Try to rescue your Xcode" ${x##*-} "..."
     defaults delete com.apple.dt.Xcode $x
+
+    if [ $? -eq 0 ]; then
+        echo "Ok"
+    else
+        echo "Err"
+    fi
+
 done
-echo $!
+
 if [ $ls ];then
   echo "\nRescue Success!Restart your Xcode and choose 'Load Bundles' option!"
 else
-  echo "\nRescue Failed!Cannot find any config of Plug-ins in your Library!"
+  echo "\nError!Cannot find any config of Plug-ins in your Library!"
 fi
