@@ -23,8 +23,10 @@ for x in $ls; do
 
 done
 
-if [ $ls ];then
+if [ ! ${#ls[@]} -eq 0 ];then
   echo "\nRescue Success!Restart your Xcode and choose 'Load Bundles' option!"
 else
   echo "\nError!Cannot find any config of Plug-ins in your Library!"
+  echo "You have been run the script maybe."
+  echo "Try to restart Xcode and check wheather it works."
 fi
