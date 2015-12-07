@@ -1,5 +1,6 @@
 # RescueXcodePlug-ins
 ####To Reload your Xcode plug-ins.
+####重新加载 Xcode 插件，用于修复插件消失错误。
 
 ####Update
 * Remove args. Now it can fix the xcode plug-ins smartly.
